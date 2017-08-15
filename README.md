@@ -1,7 +1,7 @@
 # Description
 Provided sample scripts and these instructions will help you to script Web services registration process with Axway API Gateway. These scripts are based on a sample script located under API Gateway installation directory:
 ```
-   _<INSTALL_root>/apigateway/samples/scripts/ws/registerWebService.py_
+   <INSTALL_root>/apigateway/samples/scripts/ws/registerWebService.py
 ```
 ## API Management Version Compatibilty
 This artefact was successfully tested for the following versions:
@@ -43,7 +43,7 @@ This artefact was successfully tested for the following versions:
  
   This is an example of the script invocation:
 ```  
-  _/opt/Axway/APIM-7.5.3/apigateway/posix/bin/jython upsertWebService.py --group DevG1 --service DevI1 --username admin --password changeme --url https://www.mygateway.com:8090/api --wsgroup MathServices_
+  /opt/Axway/APIM-7.5.3/apigateway/posix/bin/jython upsertWebService.py --group DevG1 --service DevI1 --username admin --password changeme --url https://www.mygateway.com:8090/api --wsgroup MathServices
 ```  
 * Once a service is registered, you can develop and apply custom policies for this service using Policy Studio. Consecutive updates to this service using the _upsertWebService.py_ script can be done without touching Policy Studio and redeploying a Gateway configuration.
  
