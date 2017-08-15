@@ -1,8 +1,8 @@
 # Description
 Provided sample scripts and these instructions will help you to script Web services registration process with Axway API Gateway. These scripts are based on a sample script located under API Gateway installation directory:
-
+```
    _<INSTALL_root>/apigateway/samples/scripts/ws/registerWebService.py_
-
+```
 ## API Management Version Compatibilty
 This artefact was successfully tested for the following versions:
 - V7.5.3
@@ -24,14 +24,15 @@ This artefact was successfully tested for the following versions:
   * ___username___ – a user name for a WSLD protected with HTTP Basic AuthN
   * ___password___ - a password for a WSLD protected with HTTP Basic AuthN
     * _Note_: if a Web service WSDL URL is not protected, then you need to modify the invocation of the retrieveDocument method by removing “username” and “password” parameters:
+```
+      r = wsg.retrieveDocument(wsdlURL)
+```
 
-      _r = wsg.retrieveDocument(wsdlURL)_
-    
 * Switch to a directory where you've downloaded the scripts.
 * Invoke the _upsertWebService.py_ script:
-
-   _<INSTALL_ROOT>/apigateway/posix/bin/jython upsertWebService.py [OPTIONS]_
-   
+```
+   <INSTALL_ROOT>/apigateway/posix/bin/jython upsertWebService.py [OPTIONS]
+```   
   * [OPTIONS] (You can add, modify or remove the command line arguments as needed in the _common.py_ file):
     * ___-g___, ___--group___ – this is a gateway group, the default value is “Group1"
     * ___-n___, ___--service___, a gateway instance name, the default value is "APIServer1"
@@ -41,9 +42,9 @@ This artefact was successfully tested for the following versions:
     * ___-w___, ___--wsgroup___ – a Web services group name, the default value is "wsgroup"
  
   This is an example of the script invocation:
-  
+```  
   _/opt/Axway/APIM-7.5.3/apigateway/posix/bin/jython upsertWebService.py --group DevG1 --service DevI1 --username admin --password changeme --url https://www.mygateway.com:8090/api --wsgroup MathServices_
-  
+```  
 * Once a service is registered, you can develop and apply custom policies for this service using Policy Studio. Consecutive updates to this service using the _upsertWebService.py_ script can be done without touching Policy Studio and redeploying a Gateway configuration.
  
 * The "example" folder in this repository contains a sample script for registering a public Web service located at:
